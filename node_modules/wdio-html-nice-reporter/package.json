@@ -1,0 +1,71 @@
+{
+  "name": "wdio-html-nice-reporter",
+  "version": "8.1.7",
+  "description": "WebdriverIO report plugin. Create an HTML formatted report. compatible with webdriverio version 8",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "build:test": "tsc --project ./tsconfig-test.json",
+    "symlink": "npm link",
+    "use:symlink": "npm link wdio-html-nice-reporter",
+    "clean": "rimraf ./lib  ./reports ./logs",
+    "clean:build": "rimraf ./lib",
+    "clean:reports": "rimraf ./reports",
+    "clean:logs": "rimraf ./logs",
+    "test:invalid": "mocha ./lib/test/invalid.test.spec.js",
+    "test:reporter": "mocha ./lib/test/reporter.spec.js",
+    "test:nested": "mocha ./lib/test/nested.test.spec.js",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rpii/wdio-html-reporter.git"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "src/test"
+  },
+  "keywords": [
+    "html",
+    "reporter",
+    "webdriverio",
+    "wdio",
+    "wdio-plugin",
+    "wdio-reporter",
+    "wdio-html-reporter"
+  ],
+  "author": "Rich Peters <16782353+rpii@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/rpii/wdio-html-reporter/issues"
+  },
+  "homepage": "http://github.com/rpii/wdio-html-reporter#readme",
+  "dependencies": {
+    "@rpii/wdio-report-events": "^8.0.2",
+    "big-json": "^3.2.0",
+    "copyfiles": "^2.3.0",
+    "dayjs": "^1.11.9",
+    "fs-extra": "^11.1.0",
+    "image-to-base64": "^2.2.0",
+    "nunjucks": "^3.2.4",
+    "open": "^8.4.0",
+    "typescript-string-operations": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^18.11.18",
+    "@types/nunjucks": "^3.2.3",
+    "@wdio/cli": "^8.15.10",
+    "@wdio/logger": "^8.11.0",
+    "@wdio/reporter": "8.15.10",
+    "chai": "^4.3.4",
+    "concat": "^1.0.3",
+    "mocha": "^10.2.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}
