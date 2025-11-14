@@ -1,0 +1,31 @@
+name: WDIO CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run WDIO tests
+        run: npx wdio run wdio.conf.js
+
+      - name: Upload HTML Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: html-report
+          path: ./reports/html
