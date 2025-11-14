@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Fix wdio permissions
+        run: chmod +x node_modules/.bin/wdio
+
       - name: Run WDIO tests
         run: npm run wdio
 
@@ -29,5 +32,3 @@ jobs:
         with:
           name: html-report
           path: ./reports/html
-      - name: Fix wdio permissions
-        run: chmod +x node_modules/.bin/wdio
